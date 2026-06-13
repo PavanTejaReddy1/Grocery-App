@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaCheck, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import logo from "../assets/carrot.avif"
+import logo from "../assets/carrot.png"
 
 const Signup = (): React.JSX.Element => {
   const [username, setUsername] = useState<string>("");

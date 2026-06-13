@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
-import logo from "../assets/carrot.avif";
+import logo from "../assets/carrot.png";
 const Login = (): React.JSX.Element => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");

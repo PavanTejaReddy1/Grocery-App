@@ -1,4 +1,4 @@
-import logo from "../assets/carrot.avif"
+import logo from "../assets/carrot.png"
 
 const Splash = (): React.JSX.Element => {
   return (
