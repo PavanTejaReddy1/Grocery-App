@@ -11,18 +11,20 @@ const allProducts = [
   ...groceryProducts,
 ];
 
-interface Product {
-  id: number;
-  name: string;
-  quantity: string;
-  price: string;
-  image: string;
-}
-
 interface ProductStore {
-  products: Product[];
+  products: any[];
+  cart: any[];
+
+  addToCart: (product: any) => void;
 }
 
-export const useProductStore = create<ProductStore>(() => ({
+export const useProductStore = create<ProductStore>((set) => ({
   products: allProducts,
+
+  cart: [],
+
+  addToCart: (product) =>
+    set((state) => ({
+      cart: [...state.cart, product],
+    })),
 }));

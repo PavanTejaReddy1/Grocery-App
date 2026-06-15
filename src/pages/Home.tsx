@@ -22,8 +22,8 @@ const Home = () => {
     );
 
     return (
-        <div className="min-h-screen bg-[#f8f8f8] flex justify-center py-6">
-            <div className="w-[390px] max-h-[680px] bg-white rounded-[30px] shadow-2xl overflow-auto">
+        <div className="bg-[#f8f8f8] flex justify-center py-6 lg:w-full lg:w-[100vw] lg:h-[100vh]">
+            <div className="overflow-auto lg:w-full lg:h-[100vh]">
                 <div className="flex flex-col items-center pt-10">
                     {/* carrot*/}
                     <img src={carrot} alt="carrot" className="w-8 h-8 object-contain" />
@@ -48,18 +48,12 @@ const Home = () => {
                         <div className="h-[52px] bg-[#F2F3F2] rounded-[15px] flex items-center px-4">
                             <SearchIcon size={18} className="text-[#7C7C7C]" />
 
-                            <input
-                                type="text"
-                                placeholder="Search Store"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                className="flex-1 ml-3 bg-transparent outline-none"
-                            />
+                            <input type="text" placeholder="Search Store" value={search} onChange={(e) => setSearch(e.target.value)} className="flex-1 ml-3 bg-transparent outline-none" />
                         </div>
                     </div>
 
                     {search.trim() !== "" ? (
-                        <div className="grid grid-cols-2 gap-4 p-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-4">
                             {filteredProducts.map((item) => (
                                 <div
                                     key={item.id}
@@ -151,12 +145,12 @@ const Home = () => {
                                         {" "}
                                         Exclusive Offer
                                     </h2>
-                                    <span className="text-[14px] font-semibold text-[#53B175]">
+                                    <span className="text-[14px] font-semibold text-[#53B175] cursor-pointer">
                                         See all
                                     </span>
                                 </div>
                                 {/* Card Rows*/}
-                                <div className="flex gap-3 overflow-x-auto scrollbar-hide px-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 overflow-x-auto scrollbar-hide px-4">
                                     {exclusiveOffers.map((item) => (
                                         <div
                                             key={item.id}
@@ -178,7 +172,7 @@ const Home = () => {
                                                 <span className="text-[14px] font-bold text-[#181725]">
                                                     ${item.price}
                                                 </span>
-                                                <button className="w-[28px] h-[28px] bg-[#53B175] rounded-full flex items-center justify-center text-white text-[20px] leading-none">
+                                                <button className="w-[28px] h-[28px] bg-[#53B175] rounded-full flex items-center justify-center text-white text-[20px] leading-none cursor-pointer">
                                                     +
                                                 </button>
                                             </div>
@@ -194,12 +188,12 @@ const Home = () => {
                                         {" "}
                                         Best Selling
                                     </h2>
-                                    <span className="text-[14px] font-semibold text-[#53B175]">
+                                    <span className="text-[14px] font-semibold text-[#53B175] cursor-pointer">
                                         See all
                                     </span>
                                 </div>
                                 {/* Card Rows*/}
-                                <div className="flex gap-3 overflow-x-auto scrollbar-hide px-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 overflow-x-auto scrollbar-hide px-4">
                                     {bestSelling.map((item) => (
                                         <div
                                             key={item.id}
@@ -220,7 +214,7 @@ const Home = () => {
                                                 <span className="text-[14px] font-bold text-[#181725]">
                                                     ${item.price}
                                                 </span>
-                                                <button className="w-[28px] h-[28px] bg-[#53B175] rounded-full flex items-center justify-center text-white text-[20px] leading-none">
+                                                <button className="w-[28px] h-[28px] bg-[#53B175] rounded-full flex items-center justify-center text-white text-[20px] leading-none cursor-pointer">
                                                     +
                                                 </button>
                                             </div>
@@ -232,14 +226,14 @@ const Home = () => {
                             <div className="mt-6">
                                 <div className="flex items-center justify-between px-4 mb-3">
                                     <h2 className="text-[20px] font-bold text-[#181725]">Groceries</h2>
-                                    <span className="text-[14px] font-semibold text-[#53B175]">See all</span>
+                                    <span className="text-[14px] font-semibold text-[#53B175] cursor-pointer">See all</span>
                                 </div>
                                 {/* Category Pills */}
-                                <div className="flex gap-3 overflow-x-auto scrollbar-hide px-4 mb-3">
+                                <div className="flex justify-center items-center gap-5 overflow-x-auto scrollbar-hide px-4 mb-3">
                                     {groceryCategories.map((item) => (
                                         <div
                                             key={item.id}
-                                            className={`min-w-[220px] h-[100px] rounded-[18px] flex items-center justify-center gap-3 px-4 ${item.bg}`}>
+                                            className={`sm:w-[740px] sm:h-[200px]  w-[200px] rounded-[18px] flex items-center justify-center gap-3 px-4 ${item.bg}`}>
                                             <img
                                                 src={item.image}
                                                 alt={item.name}
@@ -251,7 +245,7 @@ const Home = () => {
 
                                 </div>
                                 {/* Product Cards */}
-                                <div className="flex gap-3 overflow-x-auto scrollbar-hide px-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 overflow-x-auto scrollbar-hide px-4 pb-4 mb-30">
                                     {groceryProducts.map((item) => (
                                         <div
                                             key={item.id}
@@ -266,7 +260,7 @@ const Home = () => {
                                             <p className="text-[15px] font-bold text-[#181725] self-start">{item.name}</p>
                                             <div className="flex items-center justify-between w-full mt-3">
                                                 <span className="text-[16px] font-bold text-[#181725]">${item.price}</span>
-                                                <button className="w-[44px] h-[44px] bg-[#53B175] rounded-full flex items-center justify-center text-white text-[24px] leading-none">+</button>
+                                                <button className="w-[44px] h-[44px] bg-[#53B175] rounded-full flex items-center justify-center text-white text-[24px] leading-none cursor-pointer">+</button>
                                             </div>
                                         </div>
                                     ))}

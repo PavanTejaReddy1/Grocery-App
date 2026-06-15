@@ -6,6 +6,10 @@ const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const addToCart = useProductStore(
+    (state) => state.addToCart
+  );
+
   const products = useProductStore((state) => state.products);
 
   const product = products.find(
@@ -21,23 +25,13 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F5F5] flex justify-center overflow-x-hidden px-4 py-4">
-     <div className="
-  h-[800px]
-  w-full
-  bg-white
-  md:max-w-[430px]
-  md:rounded-[30px]
-  md:border
-  md:border-gray-200
-  md:shadow-2xl
-  overflow-hidden
-">
+    <div className="min-h-screen flex justify-center overflow-x-hidden px-4 py-4">
+      <div className="h-full w-full rounded-[30px] overflow-hidden">
 
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 cursor-pointer">
           <button onClick={() => navigate(-1)}>
-            <ChevronLeft size={24} className="cursor-pointer"/>
+            <ChevronLeft size={24} className="cursor-pointer" />
           </button>
 
           <Share2 size={22} />
@@ -132,7 +126,13 @@ const ProductDetails = () => {
           </div>
 
           {/* Add To Basket */}
-          <button className="h-[45px] w-full rounded-[19px] bg-[#53B175] text-lg font-semibold text-white transition hover:opacity-90 cursor-pointer">
+          <button
+            onClick={() => {
+              addToCart(product);
+              navigate("/cart");
+            }}
+            className="h-[45px] w-full rounded-[19px] bg-[#53B175] text-lg font-semibold text-white transition hover:opacity-90 cursor-pointer"
+          >
             Add To Basket
           </button>
 

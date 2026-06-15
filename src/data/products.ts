@@ -15,15 +15,15 @@ import beverages from "../assets/Beverages.png";
 import dairyFish from '../assets/Dairy&Fish.png'
 
 export const exclusiveOffers = [
-    { id: 1, name: "Organic Bananas", quantity: "7pcs, Price", price: "4.99", image: banana },
-    { id: 2, name: "Red Apple", quantity: "1kg, Price", price: "4.99", image: apple },
-    { id: 3, name: "Organic Bananas", quantity: "1kg, Price", price: "4.99", image: banana },
+    { id: 1, name: "Organic Bananas", quantity: "7pcs, Price", price: 4.99, image: banana },
+    { id: 2, name: "Red Apple", quantity: "1kg, Price", price: 4.99, image: apple },
+    { id: 3, name: "Organic Bananas", quantity: "1kg, Price", price: 4.99, image: banana },
 ];
 
 export const bestSelling = [
-    { id: 4, name: "Bell Pepper Red", quantity: "1kg, Price", price: "4.99", image: redpepper },
-    { id: 5, name: "Ginger", quantity: "250gm, Price", price: "4.99", image: Ginger },
-    { id: 6, name: "Bell Pepper", quantity: "1.5kg, Price", price: "4.99", image: redpepper },
+    { id: 4, name: "Bell Pepper Red", quantity: "1kg, Price", price: 4.99, image: redpepper },
+    { id: 5, name: "Ginger", quantity: "250gm, Price", price: 4.99, image: Ginger },
+    { id: 6, name: "Bell Pepper", quantity: "1.5kg, Price", price: 4.99, image: redpepper },
 ];
 
 
@@ -33,9 +33,9 @@ export const groceryCategories = [
 ];
 
 export const groceryProducts = [
-    { id: 9, name: "Beef Bone", quantity: "1kg, Price", price: "4.99", image: beefbone },
-    { id: 10, name: "Broiler Chicken", quantity: "1kg, Price", price: "4.99", image: broilerchicken },
-    { id: 11, name: "Beef Bone", quantity: "1kg, Price", price: "4.99", image: beefbone },
+    { id: 9, name: "Beef Bone", quantity: "1kg, Price", price: 4.99, image: beefbone },
+    { id: 10, name: "Broiler Chicken", quantity: "1kg, Price", price: 4.99, image: broilerchicken },
+    { id: 11, name: "Beef Bone", quantity: "1kg, Price", price: 4.99, image: beefbone },
 ];
 
 export const exploreCategories = [
