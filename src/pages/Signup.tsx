@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { FaCheck, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import logo from "../assets/carrot.png"
+import { useNavigate } from "react-router-dom";
 
 const Signup = (): React.JSX.Element => {
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -109,17 +112,14 @@ const Signup = (): React.JSX.Element => {
             .
           </p>
 
-          <button
-            type="submit"
-            className="w-full h-14 bg-[#57B978] hover:bg-[#4ca76b] rounded-xl text-white font-medium transition"
-          >
+          <button type="submit" className="w-full h-14 bg-[#57B978] hover:bg-[#4ca76b] rounded-xl text-white font-medium transition cursor-pointer" onClick={() => navigate("/home")}>
             Sign Up
           </button>
         </form>
 
         <p className="text-center mt-8 text-sm text-gray-700">
           Already have an account?{" "}
-          <span className="text-[#57B978] font-medium cursor-pointer">
+          <span className="text-[#57B978] font-medium cursor-pointer" onClick={() => navigate("/login")}>
             Login
           </span>
         </p>

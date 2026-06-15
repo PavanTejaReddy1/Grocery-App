@@ -1,6 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/carrot.png"
+import { useEffect } from "react";
 
 const Splash = (): React.JSX.Element => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/welcome");
+    }, 2000)
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#53B175] flex items-center justify-center">
       <div className="flex items-center gap-3">
